@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57F6E548463DA52683138C6C /* Pods_TMPlusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E3B8DF3CD1E5AC1ED9C5B6 /* Pods_TMPlusUITests.framework */; };
+		8D7B29026177327030875DCF /* Pods_TMPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB5ABE373D1FAEB70C813D3 /* Pods_TMPlus.framework */; };
+		937E0AADE2E582098FB3CA9D /* Pods_TMPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D83C95A7308A6A566A6EB4 /* Pods_TMPlusTests.framework */; };
+		9406C8691DDD0EB200A6B208 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406C8681DDD0EB200A6B208 /* User.swift */; };
+		944ED8E81DDDA5DE0098B4B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 944ED8E71DDDA5DE0098B4B0 /* GoogleService-Info.plist */; };
+		94D892A71DDBBBD200E11E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892A61DDBBBD200E11E7E /* AppDelegate.swift */; };
+		94D892A91DDBBBD200E11E7E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892A81DDBBBD200E11E7E /* HomeController.swift */; };
+		94D892AC1DDBBBD300E11E7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D892AA1DDBBBD300E11E7E /* Main.storyboard */; };
+		94D892AF1DDBBBD300E11E7E /* TMPlus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94D892AD1DDBBBD300E11E7E /* TMPlus.xcdatamodeld */; };
+		94D892B11DDBBBD300E11E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D892B01DDBBBD300E11E7E /* Assets.xcassets */; };
+		94D892B41DDBBBD300E11E7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D892B21DDBBBD300E11E7E /* LaunchScreen.storyboard */; };
+		94D892BF1DDBBBD300E11E7E /* TMPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892BE1DDBBBD300E11E7E /* TMPlusTests.swift */; };
+		94D892CA1DDBBBD300E11E7E /* TMPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892C91DDBBBD300E11E7E /* TMPlusUITests.swift */; };
+		94D892D91DDC451500E11E7E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892D81DDC451500E11E7E /* LoginController.swift */; };
+		94D892DB1DDC45AE00E11E7E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892DA1DDC45AE00E11E7E /* MainNavigationController.swift */; };
+		94D892E01DDC46F000E11E7E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892DF1DDC46F000E11E7E /* Extensions.swift */; };
+		94D892E31DDC4F2600E11E7E /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892E21DDC4F2600E11E7E /* Page.swift */; };
+		94D892E61DDC4FA200E11E7E /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892E51DDC4FA200E11E7E /* PageCell.swift */; };
+		94D892E81DDC4FE700E11E7E /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892E71DDC4FE700E11E7E /* LoginCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94D892BB1DDBBBD300E11E7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94D8929B1DDBBBD200E11E7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94D892A21DDBBBD200E11E7E;
+			remoteInfo = TMPlus;
+		};
+		94D892C61DDBBBD300E11E7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94D8929B1DDBBBD200E11E7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94D892A21DDBBBD200E11E7E;
+			remoteInfo = TMPlus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43E3B8DF3CD1E5AC1ED9C5B6 /* Pods_TMPlusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMPlusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45FF8A7440A2D82206A8BA7A /* Pods-TMPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMPlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMPlusTests/Pods-TMPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		66D83C95A7308A6A566A6EB4 /* Pods_TMPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71FB873C6687DD72E008E6CB /* Pods-TMPlusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMPlusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMPlusUITests/Pods-TMPlusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		855A86C8467ADDAB22955291 /* Pods-TMPlusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMPlusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMPlusUITests/Pods-TMPlusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9406C8671DDD077400A6B208 /* TMPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TMPlus.entitlements; sourceTree = "<group>"; };
+		9406C8681DDD0EB200A6B208 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		944ED8E71DDDA5DE0098B4B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		94D892A31DDBBBD200E11E7E /* TMPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D892A61DDBBBD200E11E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		94D892A81DDBBBD200E11E7E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		94D892AB1DDBBBD300E11E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94D892AE1DDBBBD300E11E7E /* TMPlus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TMPlus.xcdatamodel; sourceTree = "<group>"; };
+		94D892B01DDBBBD300E11E7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94D892B31DDBBBD300E11E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94D892B51DDBBBD300E11E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94D892BA1DDBBBD300E11E7E /* TMPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D892BE1DDBBBD300E11E7E /* TMPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMPlusTests.swift; sourceTree = "<group>"; };
+		94D892C01DDBBBD300E11E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94D892C51DDBBBD300E11E7E /* TMPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D892C91DDBBBD300E11E7E /* TMPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMPlusUITests.swift; sourceTree = "<group>"; };
+		94D892CB1DDBBBD300E11E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94D892D81DDC451500E11E7E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		94D892DA1DDC45AE00E11E7E /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		94D892DF1DDC46F000E11E7E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		94D892E21DDC4F2600E11E7E /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		94D892E51DDC4FA200E11E7E /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		94D892E71DDC4FE700E11E7E /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		ADB5ABE373D1FAEB70C813D3 /* Pods_TMPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3979453992F1BA588F11591 /* Pods-TMPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMPlus/Pods-TMPlus.release.xcconfig"; sourceTree = "<group>"; };
+		CEC287FD067762F7A1A407CD /* Pods-TMPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMPlus/Pods-TMPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		EA5C64F86F86844BEF893B38 /* Pods-TMPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMPlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMPlusTests/Pods-TMPlusTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94D892A01DDBBBD200E11E7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D7B29026177327030875DCF /* Pods_TMPlus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D892B71DDBBBD300E11E7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				937E0AADE2E582098FB3CA9D /* Pods_TMPlusTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D892C21DDBBBD300E11E7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57F6E548463DA52683138C6C /* Pods_TMPlusUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70FBD2373D7BE94E777A64E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADB5ABE373D1FAEB70C813D3 /* Pods_TMPlus.framework */,
+				66D83C95A7308A6A566A6EB4 /* Pods_TMPlusTests.framework */,
+				43E3B8DF3CD1E5AC1ED9C5B6 /* Pods_TMPlusUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94D8929A1DDBBBD200E11E7E = {
+			isa = PBXGroup;
+			children = (
+				94D892A51DDBBBD200E11E7E /* TMPlus */,
+				94D892BD1DDBBBD300E11E7E /* TMPlusTests */,
+				94D892C81DDBBBD300E11E7E /* TMPlusUITests */,
+				94D892A41DDBBBD200E11E7E /* Products */,
+				D3F35EDC044101ECB7D94628 /* Pods */,
+				70FBD2373D7BE94E777A64E9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		94D892A41DDBBBD200E11E7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94D892A31DDBBBD200E11E7E /* TMPlus.app */,
+				94D892BA1DDBBBD300E11E7E /* TMPlusTests.xctest */,
+				94D892C51DDBBBD300E11E7E /* TMPlusUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94D892A51DDBBBD200E11E7E /* TMPlus */ = {
+			isa = PBXGroup;
+			children = (
+				9406C8671DDD077400A6B208 /* TMPlus.entitlements */,
+				94D892E11DDC4F0B00E11E7E /* Model */,
+				94D892E41DDC4F4A00E11E7E /* View */,
+				94D892D71DDC44D600E11E7E /* Controller */,
+				94D892DC1DDC46AB00E11E7E /* Helper */,
+				94D892AA1DDBBBD300E11E7E /* Main.storyboard */,
+				94D892A61DDBBBD200E11E7E /* AppDelegate.swift */,
+				944ED8E71DDDA5DE0098B4B0 /* GoogleService-Info.plist */,
+				94D892B01DDBBBD300E11E7E /* Assets.xcassets */,
+				94D892B21DDBBBD300E11E7E /* LaunchScreen.storyboard */,
+				94D892B51DDBBBD300E11E7E /* Info.plist */,
+				94D892AD1DDBBBD300E11E7E /* TMPlus.xcdatamodeld */,
+			);
+			path = TMPlus;
+			sourceTree = "<group>";
+		};
+		94D892BD1DDBBBD300E11E7E /* TMPlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				94D892BE1DDBBBD300E11E7E /* TMPlusTests.swift */,
+				94D892C01DDBBBD300E11E7E /* Info.plist */,
+			);
+			path = TMPlusTests;
+			sourceTree = "<group>";
+		};
+		94D892C81DDBBBD300E11E7E /* TMPlusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				94D892C91DDBBBD300E11E7E /* TMPlusUITests.swift */,
+				94D892CB1DDBBBD300E11E7E /* Info.plist */,
+			);
+			path = TMPlusUITests;
+			sourceTree = "<group>";
+		};
+		94D892D71DDC44D600E11E7E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				94D892A81DDBBBD200E11E7E /* HomeController.swift */,
+				94D892D81DDC451500E11E7E /* LoginController.swift */,
+				94D892DA1DDC45AE00E11E7E /* MainNavigationController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		94D892DC1DDC46AB00E11E7E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				94D892DF1DDC46F000E11E7E /* Extensions.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		94D892E11DDC4F0B00E11E7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94D892E21DDC4F2600E11E7E /* Page.swift */,
+				9406C8681DDD0EB200A6B208 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		94D892E41DDC4F4A00E11E7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94D892E51DDC4FA200E11E7E /* PageCell.swift */,
+				94D892E71DDC4FE700E11E7E /* LoginCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D3F35EDC044101ECB7D94628 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEC287FD067762F7A1A407CD /* Pods-TMPlus.debug.xcconfig */,
+				C3979453992F1BA588F11591 /* Pods-TMPlus.release.xcconfig */,
+				45FF8A7440A2D82206A8BA7A /* Pods-TMPlusTests.debug.xcconfig */,
+				EA5C64F86F86844BEF893B38 /* Pods-TMPlusTests.release.xcconfig */,
+				855A86C8467ADDAB22955291 /* Pods-TMPlusUITests.debug.xcconfig */,
+				71FB873C6687DD72E008E6CB /* Pods-TMPlusUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94D892A21DDBBBD200E11E7E /* TMPlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94D892CE1DDBBBD300E11E7E /* Build configuration list for PBXNativeTarget "TMPlus" */;
+			buildPhases = (
+				37874CB824DA0DCEEA8A8A9A /* [CP] Check Pods Manifest.lock */,
+				94D8929F1DDBBBD200E11E7E /* Sources */,
+				94D892A01DDBBBD200E11E7E /* Frameworks */,
+				94D892A11DDBBBD200E11E7E /* Resources */,
+				915DF72E421D233D0DF3A7CA /* [CP] Embed Pods Frameworks */,
+				901E3F8E6FAF64F83520304E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TMPlus;
+			productName = TMPlus;
+			productReference = 94D892A31DDBBBD200E11E7E /* TMPlus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94D892B91DDBBBD300E11E7E /* TMPlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94D892D11DDBBBD300E11E7E /* Build configuration list for PBXNativeTarget "TMPlusTests" */;
+			buildPhases = (
+				5194AB18EAFC6EF3633541C1 /* [CP] Check Pods Manifest.lock */,
+				94D892B61DDBBBD300E11E7E /* Sources */,
+				94D892B71DDBBBD300E11E7E /* Frameworks */,
+				94D892B81DDBBBD300E11E7E /* Resources */,
+				9994DA73A585913E52833DA8 /* [CP] Embed Pods Frameworks */,
+				68ED2BFC2508FF78A0EB9065 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94D892BC1DDBBBD300E11E7E /* PBXTargetDependency */,
+			);
+			name = TMPlusTests;
+			productName = TMPlusTests;
+			productReference = 94D892BA1DDBBBD300E11E7E /* TMPlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		94D892C41DDBBBD300E11E7E /* TMPlusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94D892D41DDBBBD300E11E7E /* Build configuration list for PBXNativeTarget "TMPlusUITests" */;
+			buildPhases = (
+				43795055706979D4D4FBDBC3 /* [CP] Check Pods Manifest.lock */,
+				94D892C11DDBBBD300E11E7E /* Sources */,
+				94D892C21DDBBBD300E11E7E /* Frameworks */,
+				94D892C31DDBBBD300E11E7E /* Resources */,
+				E4C6D2E5C00A07E889C0A80C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94D892C71DDBBBD300E11E7E /* PBXTargetDependency */,
+			);
+			name = TMPlusUITests;
+			productName = TMPlusUITests;
+			productReference = 94D892C51DDBBBD300E11E7E /* TMPlusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94D8929B1DDBBBD200E11E7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = SimpuMind;
+				TargetAttributes = {
+					94D892A21DDBBBD200E11E7E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = GDMX8HJT5A;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					94D892B91DDBBBD300E11E7E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = GDMX8HJT5A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 94D892A21DDBBBD200E11E7E;
+					};
+					94D892C41DDBBBD300E11E7E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = GDMX8HJT5A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 94D892A21DDBBBD200E11E7E;
+					};
+				};
+			};
+			buildConfigurationList = 94D8929E1DDBBBD200E11E7E /* Build configuration list for PBXProject "TMPlus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 94D8929A1DDBBBD200E11E7E;
+			productRefGroup = 94D892A41DDBBBD200E11E7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94D892A21DDBBBD200E11E7E /* TMPlus */,
+				94D892B91DDBBBD300E11E7E /* TMPlusTests */,
+				94D892C41DDBBBD300E11E7E /* TMPlusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94D892A11DDBBBD200E11E7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944ED8E81DDDA5DE0098B4B0 /* GoogleService-Info.plist in Resources */,
+				94D892B41DDBBBD300E11E7E /* LaunchScreen.storyboard in Resources */,
+				94D892B11DDBBBD300E11E7E /* Assets.xcassets in Resources */,
+				94D892AC1DDBBBD300E11E7E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D892B81DDBBBD300E11E7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D892C31DDBBBD300E11E7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37874CB824DA0DCEEA8A8A9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		43795055706979D4D4FBDBC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5194AB18EAFC6EF3633541C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		68ED2BFC2508FF78A0EB9065 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMPlusTests/Pods-TMPlusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		901E3F8E6FAF64F83520304E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMPlus/Pods-TMPlus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		915DF72E421D233D0DF3A7CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMPlus/Pods-TMPlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9994DA73A585913E52833DA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMPlusTests/Pods-TMPlusTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4C6D2E5C00A07E889C0A80C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMPlusUITests/Pods-TMPlusUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94D8929F1DDBBBD200E11E7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D892DB1DDC45AE00E11E7E /* MainNavigationController.swift in Sources */,
+				94D892A91DDBBBD200E11E7E /* HomeController.swift in Sources */,
+				94D892E01DDC46F000E11E7E /* Extensions.swift in Sources */,
+				94D892D91DDC451500E11E7E /* LoginController.swift in Sources */,
+				94D892E31DDC4F2600E11E7E /* Page.swift in Sources */,
+				94D892AF1DDBBBD300E11E7E /* TMPlus.xcdatamodeld in Sources */,
+				94D892E61DDC4FA200E11E7E /* PageCell.swift in Sources */,
+				94D892A71DDBBBD200E11E7E /* AppDelegate.swift in Sources */,
+				9406C8691DDD0EB200A6B208 /* User.swift in Sources */,
+				94D892E81DDC4FE700E11E7E /* LoginCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D892B61DDBBBD300E11E7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D892BF1DDBBBD300E11E7E /* TMPlusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D892C11DDBBBD300E11E7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D892CA1DDBBBD300E11E7E /* TMPlusUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94D892BC1DDBBBD300E11E7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94D892A21DDBBBD200E11E7E /* TMPlus */;
+			targetProxy = 94D892BB1DDBBBD300E11E7E /* PBXContainerItemProxy */;
+		};
+		94D892C71DDBBBD300E11E7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94D892A21DDBBBD200E11E7E /* TMPlus */;
+			targetProxy = 94D892C61DDBBBD300E11E7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		94D892AA1DDBBBD300E11E7E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D892AB1DDBBBD300E11E7E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		94D892B21DDBBBD300E11E7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D892B31DDBBBD300E11E7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94D892CC1DDBBBD300E11E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		94D892CD1DDBBBD300E11E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94D892CF1DDBBBD300E11E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC287FD067762F7A1A407CD /* Pods-TMPlus.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TMPlus/TMPlus.entitlements;
+				DEVELOPMENT_TEAM = GDMX8HJT5A;
+				INFOPLIST_FILE = TMPlus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simpumind.TMPlus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		94D892D01DDBBBD300E11E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3979453992F1BA588F11591 /* Pods-TMPlus.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TMPlus/TMPlus.entitlements;
+				DEVELOPMENT_TEAM = GDMX8HJT5A;
+				INFOPLIST_FILE = TMPlus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simpumind.TMPlus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		94D892D21DDBBBD300E11E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45FF8A7440A2D82206A8BA7A /* Pods-TMPlusTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GDMX8HJT5A;
+				INFOPLIST_FILE = TMPlusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simpumind.TMPlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TMPlus.app/TMPlus";
+			};
+			name = Debug;
+		};
+		94D892D31DDBBBD300E11E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA5C64F86F86844BEF893B38 /* Pods-TMPlusTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GDMX8HJT5A;
+				INFOPLIST_FILE = TMPlusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simpumind.TMPlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TMPlus.app/TMPlus";
+			};
+			name = Release;
+		};
+		94D892D51DDBBBD300E11E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 855A86C8467ADDAB22955291 /* Pods-TMPlusUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = GDMX8HJT5A;
+				INFOPLIST_FILE = TMPlusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simpumind.TMPlusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TMPlus;
+			};
+			name = Debug;
+		};
+		94D892D61DDBBBD300E11E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71FB873C6687DD72E008E6CB /* Pods-TMPlusUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = GDMX8HJT5A;
+				INFOPLIST_FILE = TMPlusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simpumind.TMPlusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TMPlus;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94D8929E1DDBBBD200E11E7E /* Build configuration list for PBXProject "TMPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D892CC1DDBBBD300E11E7E /* Debug */,
+				94D892CD1DDBBBD300E11E7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94D892CE1DDBBBD300E11E7E /* Build configuration list for PBXNativeTarget "TMPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D892CF1DDBBBD300E11E7E /* Debug */,
+				94D892D01DDBBBD300E11E7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94D892D11DDBBBD300E11E7E /* Build configuration list for PBXNativeTarget "TMPlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D892D21DDBBBD300E11E7E /* Debug */,
+				94D892D31DDBBBD300E11E7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94D892D41DDBBBD300E11E7E /* Build configuration list for PBXNativeTarget "TMPlusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D892D51DDBBBD300E11E7E /* Debug */,
+				94D892D61DDBBBD300E11E7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		94D892AD1DDBBBD300E11E7E /* TMPlus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				94D892AE1DDBBBD300E11E7E /* TMPlus.xcdatamodel */,
+			);
+			currentVersion = 94D892AE1DDBBBD300E11E7E /* TMPlus.xcdatamodel */;
+			path = TMPlus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 94D8929B1DDBBBD200E11E7E /* Project object */;
+}
