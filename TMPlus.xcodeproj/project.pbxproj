@@ -239,6 +239,7 @@
 				94D892A11DDBBBD200E11E7E /* Resources */,
 				915DF72E421D233D0DF3A7CA /* [CP] Embed Pods Frameworks */,
 				901E3F8E6FAF64F83520304E /* [CP] Copy Pods Resources */,
+				947E9D491DDDFABF00B1CDE9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -462,6 +463,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMPlus/Pods-TMPlus-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		947E9D491DDDFABF00B1CDE9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4bb99d7876a15bdedc8449ae1f762a257109d92e 40c773f4c5870445d8265e5e40df72f3db4c2e9b5ca6ee2e1e10ba1b80f3a7ec";
 		};
 		9994DA73A585913E52833DA8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -105,7 +105,7 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if GIDSignIn.sharedInstance().currentUser != nil{
-            dismiss(animated: true, completion: nil)
+               dismiss(animated: true, completion: nil)
         }
     }
     

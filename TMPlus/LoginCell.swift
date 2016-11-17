@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
+import TwitterKit
 
 class LoginCell: UICollectionViewCell, FBSDKLoginButtonDelegate{
     
@@ -39,8 +40,11 @@ class LoginCell: UICollectionViewCell, FBSDKLoginButtonDelegate{
     
     lazy var googleButton: GIDSignInButton = {
         let button = GIDSignInButton()
+        button.style = .wide
+        button.colorScheme = .dark
         return button
     }()
+    
     
     lazy var facebookButton: FBSDKLoginButton = {
         let button = FBSDKLoginButton()
@@ -52,12 +56,42 @@ class LoginCell: UICollectionViewCell, FBSDKLoginButtonDelegate{
     
     weak var delegate: LoginControllerDelegate?
     
+    
+    
     func handleLogin(){
         delegate?.finishLoggingIn()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        
+        let twitterButton = TWTRLogInButton { (session, error) in
+            if let unwrappedSession = session {
+                
+                let client = TWTRAPIClient.withCurrentUser()
+                
+                client.loadUser(withID: unwrappedSession.userID, completion: { (user, error) in
+                    let usernameT = user?.name
+                    let userID = user?.userID
+                    let imageUrlT = URL(string: (user?.profileImageURL)!)
+                    let emailT = user?.screenName
+                    
+                    let user = User(id: userID!, username: usernameT!, email: emailT!, imageUrl: imageUrlT!)
+                    
+                    UserDefaults.standard.saveUserDetails(user: user)
+                    
+                })
+                
+                
+            } else {
+                NSLog("Login error: %@", error!.localizedDescription);
+            }
+        }
+        
+        // TODO: Change where the log in button is positioned in your view
+        addSubview(twitterButton)
+
         
        backgroundColor = UIColor(red:214.0/255.0, green:214.0/255.0, blue:214.0/255.0, alpha:1.0)
         
@@ -70,13 +104,11 @@ class LoginCell: UICollectionViewCell, FBSDKLoginButtonDelegate{
         
         logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-       // _ = emailTextField.anchor(logoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 8, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
-        
-       // _ = passwordTextField.anchor(emailTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 8, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
-        
-        _ = facebookButton.anchor(logoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 10, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 40)
+        _ = facebookButton.anchor(logoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 8, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
         
         _ = googleButton.anchor(facebookButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 8, leftConstant: 29, bottomConstant: 0, rightConstant: 29, widthConstant: 0, heightConstant: 50)
+        
+        _ = twitterButton.anchor(googleButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 8, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
     }
     
     required init?(coder aDecoder: NSCoder) {

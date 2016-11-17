@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
+import TwitterKit
 
 extension UserDefaults{
     
@@ -41,7 +42,11 @@ extension UserDefaults{
     func removeUserDetails(){
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
+        
+        Twitter.sharedInstance().sessionStore.logOutUserID(fetchUserDetails().id!)
+        
         GIDSignIn.sharedInstance().signOut()
+        
         setIsLoggedIn(value: false)
         let appDomain = Bundle.main.bundleIdentifier!
         removeVolatileDomain(forName: appDomain)
