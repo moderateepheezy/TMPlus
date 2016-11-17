@@ -64,8 +64,10 @@ class CustomTabController: UITabBarController{
         videoNavigationController.title = "Videos"
         videoNavigationController.tabBarItem.image = UIImage(named: "video")
         
+        viewControllers = [homeNavigationController, eventNavigationController, trendNavigationController, videoNavigationController]
+        
         if isLoggedin(){
-            viewControllers = [homeNavigationController, eventNavigationController, trendNavigationController, videoNavigationController]
+            print("Login")
         }else{
             perform(#selector(showLoginController), with: nil,afterDelay: 0.01)
         }

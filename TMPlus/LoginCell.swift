@@ -82,7 +82,7 @@ class LoginCell: UICollectionViewCell, FBSDKLoginButtonDelegate{
                     UserDefaults.standard.saveUserDetails(user: user)
                     
                 })
-                
+                self.delegate?.finishLoggingIn()
                 
             } else {
                 NSLog("Login error: %@", error!.localizedDescription);

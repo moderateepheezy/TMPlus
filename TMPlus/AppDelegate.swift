@@ -79,8 +79,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }
            
             
-            //delegate?.finishLoggingIn()
-            window?.rootViewController = CustomTabController()
+            delegate?.finishLoggingIn()
+            //window?.rootViewController = CustomTabController()
         } else {
             print("Login to Google failed with: \(error)")
         }
