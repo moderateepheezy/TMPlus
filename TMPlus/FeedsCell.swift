@@ -23,8 +23,8 @@ class FeedsCell: UICollectionViewCell {
        let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.layer.masksToBounds = true
+        iv.image = UIImage(named: "tailor_swift_back")
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.backgroundColor = .red
         return iv
     }()
     
@@ -143,9 +143,9 @@ class FeedsCell: UICollectionViewCell {
         
         _ = likeCountLabel.anchor(nil, left: likeButton.rightAnchor, bottom: containerView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 5, bottomConstant: 0, rightConstant: 0, widthConstant: 15, heightConstant: 15)
         
-         _ = readImageView.anchor(nil, left: likeCountLabel.rightAnchor, bottom: containerView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 10, bottomConstant: 0, rightConstant: 0, widthConstant: 15, heightConstant: 15)
+         _ = readImageView.anchor(nil, left: likeCountLabel.rightAnchor, bottom: containerView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 5, bottomConstant: 0, rightConstant: 0, widthConstant: 15, heightConstant: 15)
         
-        _ = readLabel.anchor(nil, left: readImageView.rightAnchor, bottom: containerView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 15, heightConstant: 15)
+        _ = readLabel.anchor(nil, left: readImageView.rightAnchor, bottom: containerView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 5, bottomConstant: 0, rightConstant: 0, widthConstant: 15, heightConstant: 15)
 
     }
     

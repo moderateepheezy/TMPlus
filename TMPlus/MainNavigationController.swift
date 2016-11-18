@@ -41,7 +41,9 @@ class CustomTabController: UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tabBar.backgroundColor = UIColor(red: 179.0/255, green: 13.0/255, blue: 13.0/255.0, alpha: 1)
+
+        tabBar.isTranslucent = false
         
         let layout = UICollectionViewFlowLayout()
         let newsController = NewsController(collectionViewLayout: layout)
@@ -50,7 +52,7 @@ class CustomTabController: UITabBarController{
         newsNavigationController.tabBarItem.image = UIImage(named: "news")
         newsNavigationController.navigationBar.isTranslucent = false
         
-        let eventsController = UIViewController()
+        let eventsController = EventsController(collectionViewLayout: layout)
         let eventNavigationController = UINavigationController(rootViewController: eventsController)
         eventNavigationController.title = TABNAME.EVENTS.rawValue
         eventNavigationController.tabBarItem.image = UIImage(named: "event")
@@ -60,7 +62,7 @@ class CustomTabController: UITabBarController{
         trendNavigationController.title = TABNAME.TRENDS.rawValue
         trendNavigationController.tabBarItem.image = UIImage(named: "trend")
         
-        let videoController = UIViewController()
+        let videoController = VideosController(collectionViewLayout: layout)
         let videoNavigationController = UINavigationController(rootViewController: videoController)
         videoNavigationController.title = TABNAME.VIDEOS.rawValue
         videoNavigationController.tabBarItem.image = UIImage(named: "video")

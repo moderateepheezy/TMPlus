@@ -1,26 +1,17 @@
 //
-//  ViewController.swift
+//  EventsController.swift
 //  TMPlus
 //
-//  Created by SimpuMind on 11/15/16.
+//  Created by SimpuMind on 11/18/16.
 //  Copyright © 2016 SimpuMind. All rights reserved.
 //
 
 import UIKit
 
-
-enum TABNAME: String {
-    case NEWS = "News"
-    case EVENTS = "Events"
-    case TRENDS = "Trends"
-    case VIDEOS = "Videos"
-}
-
-class NewsController: UICollectionViewController,
-            UICollectionViewDelegateFlowLayout {
-
-    let cellId = "cellId"
+class EventsController: UICollectionViewController,
+UICollectionViewDelegateFlowLayout {
     
+    let cellId = "cellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +23,7 @@ class NewsController: UICollectionViewController,
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(FeedsCell.self, forCellWithReuseIdentifier: cellId)
         
-        navigationItem.title = TABNAME.NEWS.rawValue
+        navigationItem.title = TABNAME.EVENTS.rawValue
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(handleSignOut))
     }
@@ -66,6 +57,7 @@ class NewsController: UICollectionViewController,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(10, 10, 10, 10)
     }
-
+    
 }
+
 

@@ -13,6 +13,8 @@
 		9406C8691DDD0EB200A6B208 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406C8681DDD0EB200A6B208 /* User.swift */; };
 		944ED8E81DDDA5DE0098B4B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 944ED8E71DDDA5DE0098B4B0 /* GoogleService-Info.plist */; };
 		947E9D4B1DDE55DA00B1CDE9 /* FeedsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E9D4A1DDE55DA00B1CDE9 /* FeedsCell.swift */; };
+		947E9D4D1DDF920E00B1CDE9 /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E9D4C1DDF920C00B1CDE9 /* EventsController.swift */; };
+		947E9D4F1DDF945000B1CDE9 /* VideosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E9D4E1DDF945000B1CDE9 /* VideosController.swift */; };
 		94D892A71DDBBBD200E11E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892A61DDBBBD200E11E7E /* AppDelegate.swift */; };
 		94D892A91DDBBBD200E11E7E /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D892A81DDBBBD200E11E7E /* NewsController.swift */; };
 		94D892AC1DDBBBD300E11E7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D892AA1DDBBBD300E11E7E /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		9406C8681DDD0EB200A6B208 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		944ED8E71DDDA5DE0098B4B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		947E9D4A1DDE55DA00B1CDE9 /* FeedsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsCell.swift; sourceTree = "<group>"; };
+		947E9D4C1DDF920C00B1CDE9 /* EventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
+		947E9D4E1DDF945000B1CDE9 /* VideosController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosController.swift; sourceTree = "<group>"; };
 		94D892A31DDBBBD200E11E7E /* TMPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D892A61DDBBBD200E11E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94D892A81DDBBBD200E11E7E /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				94D892A81DDBBBD200E11E7E /* NewsController.swift */,
 				94D892D81DDC451500E11E7E /* LoginController.swift */,
 				94D892DA1DDC45AE00E11E7E /* MainNavigationController.swift */,
+				947E9D4C1DDF920C00B1CDE9 /* EventsController.swift */,
+				947E9D4E1DDF945000B1CDE9 /* VideosController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -523,7 +529,9 @@
 				94D892E01DDC46F000E11E7E /* Extensions.swift in Sources */,
 				94D892D91DDC451500E11E7E /* LoginController.swift in Sources */,
 				94D892E31DDC4F2600E11E7E /* Page.swift in Sources */,
+				947E9D4D1DDF920E00B1CDE9 /* EventsController.swift in Sources */,
 				94D892AF1DDBBBD300E11E7E /* TMPlus.xcdatamodeld in Sources */,
+				947E9D4F1DDF945000B1CDE9 /* VideosController.swift in Sources */,
 				94D892E61DDC4FA200E11E7E /* PageCell.swift in Sources */,
 				94D892A71DDBBBD200E11E7E /* AppDelegate.swift in Sources */,
 				9406C8691DDD0EB200A6B208 /* User.swift in Sources */,

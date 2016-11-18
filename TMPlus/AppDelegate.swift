@@ -46,20 +46,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        application.statusBarStyle = .lightContent
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         //UIStatus
         
-        let statusBarBackgroundView = UIView()
-        statusBarBackgroundView.backgroundColor = UIColor(red: 200.0/255, green: 40.0/255, blue: 40.0/255.0, alpha: 1)
-        statusBarBackgroundView.translatesAutoresizingMaskIntoConstraints = false
-        window?.addSubview(statusBarBackgroundView)
-        
-        statusBarBackgroundView.leftAnchor.constraint(equalTo: (window?.leftAnchor)!).isActive = true
-        statusBarBackgroundView.rightAnchor.constraint(equalTo: (window?.rightAnchor)!).isActive = true
-        statusBarBackgroundView.widthAnchor.constraint(equalTo: (window?.widthAnchor)!).isActive = true
-        statusBarBackgroundView.topAnchor.constraint(equalTo: (window?.topAnchor)!).isActive = true
-        
-        statusBarBackgroundView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+//        let statusBarBackgroundView = UIView()
+//        statusBarBackgroundView.backgroundColor = UIColor(red: 200.0/255, green: 40.0/255, blue: 40.0/255.0, alpha: 1)
+//        statusBarBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+//        window?.addSubview(statusBarBackgroundView)
+//        
+//        statusBarBackgroundView.leftAnchor.constraint(equalTo: (window?.leftAnchor)!).isActive = true
+//        statusBarBackgroundView.rightAnchor.constraint(equalTo: (window?.rightAnchor)!).isActive = true
+//        statusBarBackgroundView.widthAnchor.constraint(equalTo: (window?.widthAnchor)!).isActive = true
+//        statusBarBackgroundView.topAnchor.constraint(equalTo: (window?.topAnchor)!).isActive = true
+//        
+//        statusBarBackgroundView.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         return true
     }
