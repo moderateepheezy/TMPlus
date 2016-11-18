@@ -100,3 +100,34 @@ extension UIView{
     }
 }
 
+extension UILabel {
+    
+    func autoresize() {
+        if let textNSString: NSString = self.text as NSString? {
+            let rect = textNSString.boundingRect(with: CGSize(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude),
+                                                         options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                                                         attributes: [NSFontAttributeName: self.font],
+                                                         context: nil)
+            self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: rect.height)
+        }
+    }
+    
+}
+
+extension UIView {
+    
+    func addConstraintsWithFormat(format: String, views: UIView...) {
+        
+        var viewsDictionary = [String: UIView]()
+        for (index, view) in views.enumerated() {
+            let key = "v\(index)"
+            viewsDictionary[key] = view
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
+    }
+    
+}
+
+

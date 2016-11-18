@@ -42,29 +42,30 @@ class CustomTabController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //view.backgroundColor = .white
         
-        let homeController = HomeController()
-        let homeNavigationController = UINavigationController(rootViewController: homeController)
-        homeNavigationController.title = "News"
-        homeNavigationController.tabBarItem.image = UIImage(named: "news")
+        let layout = UICollectionViewFlowLayout()
+        let newsController = NewsController(collectionViewLayout: layout)
+        let newsNavigationController = UINavigationController(rootViewController: newsController)
+        newsNavigationController.title = TABNAME.NEWS.rawValue
+        newsNavigationController.tabBarItem.image = UIImage(named: "news")
+        newsNavigationController.navigationBar.isTranslucent = false
         
         let eventsController = UIViewController()
         let eventNavigationController = UINavigationController(rootViewController: eventsController)
-        eventNavigationController.title = "Events"
+        eventNavigationController.title = TABNAME.EVENTS.rawValue
         eventNavigationController.tabBarItem.image = UIImage(named: "event")
         
         let trendController = UIViewController()
         let trendNavigationController = UINavigationController(rootViewController: trendController)
-        trendNavigationController.title = "Trends"
+        trendNavigationController.title = TABNAME.TRENDS.rawValue
         trendNavigationController.tabBarItem.image = UIImage(named: "trend")
         
         let videoController = UIViewController()
         let videoNavigationController = UINavigationController(rootViewController: videoController)
-        videoNavigationController.title = "Videos"
+        videoNavigationController.title = TABNAME.VIDEOS.rawValue
         videoNavigationController.tabBarItem.image = UIImage(named: "video")
         
-        viewControllers = [homeNavigationController, eventNavigationController, trendNavigationController, videoNavigationController]
+        viewControllers = [newsNavigationController, eventNavigationController, trendNavigationController, videoNavigationController]
         
         if isLoggedin(){
             print("Login")

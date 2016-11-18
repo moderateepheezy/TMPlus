@@ -38,11 +38,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         window?.rootViewController = CustomTabController()
         
-        UINavigationBar.appearance().barTintColor = UIColor(colorLiteralRed: 51/255, green: 90/255, blue: 149/255, alpha: 1)
+        //rgb(213,48,48)
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 179.0/255, green: 13.0/255, blue: 13.0/255.0, alpha: 1)
+        
+        UITabBar.appearance().tintColor = UIColor(red: 179.0/255, green: 13.0/255, blue: 13.0/255.0, alpha: 1)
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         application.statusBarStyle = .lightContent
+        //UIStatus
+        
+        let statusBarBackgroundView = UIView()
+        statusBarBackgroundView.backgroundColor = UIColor(red: 200.0/255, green: 40.0/255, blue: 40.0/255.0, alpha: 1)
+        statusBarBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        window?.addSubview(statusBarBackgroundView)
+        
+        statusBarBackgroundView.leftAnchor.constraint(equalTo: (window?.leftAnchor)!).isActive = true
+        statusBarBackgroundView.rightAnchor.constraint(equalTo: (window?.rightAnchor)!).isActive = true
+        statusBarBackgroundView.widthAnchor.constraint(equalTo: (window?.widthAnchor)!).isActive = true
+        statusBarBackgroundView.topAnchor.constraint(equalTo: (window?.topAnchor)!).isActive = true
+        
+        statusBarBackgroundView.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         return true
     }
