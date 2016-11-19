@@ -24,6 +24,8 @@ class NewsController: UICollectionViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -56,6 +58,7 @@ class NewsController: UICollectionViewController,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeedsCell
         
         
+        
         return cell
     }
     
@@ -65,6 +68,13 @@ class NewsController: UICollectionViewController,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(10, 10, 10, 10)
+    }
+    
+    fileprivate func renderNewsToView(cell: FeedsCell, post: News){
+        cell.postTitleLabel.text = post.title
+        cell.postTimeTextView.text = post.timestamp
+        cell.descriptionLabel.text = post.content
+        cell.postImageView.loadImageWithCache(urlString: post.image!)
     }
 
 }

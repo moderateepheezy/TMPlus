@@ -11,6 +11,39 @@ import FBSDKLoginKit
 import GoogleSignIn
 import TwitterKit
 
+let imageCache = NSCache<NSString, UIImage>()
+
+extension UIImageView{
+    
+    func loadImageWithCache(urlString: String){
+        
+        self.image = nil
+        
+        if let cacheImage = imageCache.object(forKey: urlString as NSString){
+            self.image = cacheImage
+        }else{
+            let url = NSURL(string: urlString)
+            
+            URLSession.shared.dataTask(with: url! as URL, completionHandler: { (data, response, error) in
+                
+                if error != nil{
+                    print("\(error)")
+                    return
+                }
+                DispatchQueue.main.async {
+                    
+                    if let imageDownload =  UIImage(data: data!){
+                        imageCache.setObject(imageDownload, forKey: urlString as NSString)
+                        self.image = imageDownload
+                    }
+                }
+                
+            }).resume()
+        }
+    }
+}
+
+
 extension UserDefaults{
     
     enum UserDefaultsKey: String {

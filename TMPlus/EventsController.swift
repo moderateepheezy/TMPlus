@@ -13,8 +13,21 @@ UICollectionViewDelegateFlowLayout {
     
     let cellId = "cellId"
     
+    var events: [Event]?
+    
+    func fetchEvents(){
+        ApiService.sharedInstance.fetchEventsFeeds { (events: [Event]) in
+            
+            self.events = events
+            self.collectionView?.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchEvents()
+        
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -40,12 +53,15 @@ UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return events?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeedsCell
         
+        let post = events?[indexPath.item]
+        
+        renderEventToView(cell: cell, post: post!)
         
         return cell
     }
@@ -57,6 +73,14 @@ UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(10, 10, 10, 10)
     }
+    
+    fileprivate func renderEventToView(cell: FeedsCell, post: Event){
+        cell.postTitleLabel.text = post.name
+        cell.postTimeTextView.text = post.start
+        cell.descriptionLabel.text = post.__description
+        cell.postImageView.loadImageWithCache(urlString: post.img_name!)
+    }
+
     
 }
 
