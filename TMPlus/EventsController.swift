@@ -12,6 +12,7 @@ class EventsController: UICollectionViewController,
 UICollectionViewDelegateFlowLayout {
     
     let cellId = "cellId"
+    let reverseCellId = "reverseCellId"
     
     var events: [Event]?
     
@@ -34,6 +35,7 @@ UICollectionViewDelegateFlowLayout {
         collectionView?.backgroundColor = UIColor(white: 0.95, alpha: 0.95)
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(FeedsCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(ReverseFeedsCell.self, forCellWithReuseIdentifier: reverseCellId)
         
         navigationItem.title = TABNAME.EVENTS.rawValue
         
@@ -56,13 +58,26 @@ UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeedsCell
+        if indexPath.item % 2 == 1{
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeedsCell
+            
+            let post = events?[indexPath.item]
+            
+            renderViewGravityLeft(cell: cell, post: post!)
+            
+            return cell
+            
+        }
         
-        //let post = Events?[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reverseCellId, for: indexPath) as! ReverseFeedsCell
         
-        //renderEventToView(cell: cell, post: post!)
+        let post = events?[indexPath.item]
+        
+        renderViewGrafityRight(cell: cell, post: post!)
         
         return cell
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
