@@ -20,9 +20,28 @@ class ApiService: NSObject{
     let baseUrl = "http://voice.atp-sevas.com/demo/yql"
     
     func fetchNewsFeeds(completion: @escaping ([News]) -> ()){
-        fetchFeedForUrlString(urlString: "\(baseUrl)/users/\(UserDefaults.standard.fetchUserDetails().id)/news/preferences?value=bella", completion: completion)
+        
+        guard let id = UserDefaults.standard.fetchUserDetails().id else{
+            return
+        }
+        
+        fetchFeedForUrlString(urlString: "\(baseUrl)/users/\(id)/news/preferences?value=bella", completion: completion)
     }
     
+    func fetchEventsFeeds(completion: @escaping ([Event]) -> ()){
+    
+        guard let id = UserDefaults.standard.fetchUserDetails().id else{
+            return
+        }
+        print("\(id)")
+        fetchFeedForUrlString(urlString: "\(baseUrl)/events", completion: completion)
+        
+    }
+    
+    func fetchTrendsFeeds(completion: @escaping ([Trend]) -> ()){
+        fetchFeedForUrlString(urlString: "\(baseUrl)/trends", completion: completion)
+    }
+
     func fetchVideosFeeds(completion: @escaping ([Video]) -> ()){
         fetchFeedForUrlString(urlString: "\(baseUrl)/videos", completion: completion)
         
@@ -40,7 +59,7 @@ class ApiService: NSObject{
             
             if let wrappedData = data,
                 let json = try? JSONSerialization.jsonObject(with: wrappedData, options: .allowFragments) as? [String: Any]{
-                
+                print("JsonDataFormat\(json)")
                 if let results = json?["data"] as? [[String: AnyObject]]{
                     let posts = results.flatMap({return T($0)})
                     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Event: NSObject {
+class Event: NSObject, JSONDecodable {
     
     fileprivate var _id: String!
     fileprivate var _name: String!
@@ -102,5 +102,18 @@ class Event: NSObject {
         _like_count = dictionary["like_count"] as? Int
         _like_status = dictionary["like_status"] as? Int
         
+    }
+    
+    required init(_ json: [String: Any]) {
+        super.init()
+        _id = json["id"] as? String
+        _name = json["name"] as? String
+        _description = json["description"] as? String
+        _start = json["start"] as? String
+        _img_name = json["img_name"] as? String
+        _type = json["type"] as? String
+        _url = json["url"] as? String
+        _like_count = json["like_count"] as? Int
+        _like_status = json["like_status"] as? Int
     }
 }

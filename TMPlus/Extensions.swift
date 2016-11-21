@@ -140,19 +140,6 @@ extension UIView{
     }
 }
 
-extension UILabel {
-    
-    func autoresize() {
-        if let textNSString: NSString = self.text as NSString? {
-            let rect = textNSString.boundingRect(with: CGSize(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude),
-                                                         options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                                         attributes: [NSFontAttributeName: self.font],
-                                                         context: nil)
-            self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: rect.height)
-        }
-    }
-    
-}
 
 extension UIView {
     

@@ -8,12 +8,22 @@
 
 import UIKit
 
-class Trend: NSObject {
+class Trend: NSObject, JSONDecodable {
     
-    fileprivate var name: String?
-    fileprivate var query: String?
-    fileprivate var tweet_volume: Int?
-    private var tweets_sata: [TweetsSatum]?
+    fileprivate var _name: String?
+    fileprivate var _query: String?
+    fileprivate var _tweet_volume: Int?
+    private var _tweets_sata: [TweetsSatum]?
+    
+    required init(_ json: [String: Any]) {
+        super.init()
+        
+        _name = json["name"] as? String
+        _query = json["query"] as? String
+        _tweet_volume = json["tweet_volume"] as? Int
+        //_tweets_sata = json["tweets_sata"] as? Int
+        
+    }
 }
 
 

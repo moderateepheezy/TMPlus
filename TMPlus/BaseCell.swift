@@ -28,6 +28,7 @@ class BaseCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "This is a sample title, and its going to be so long soon, please watch out for it"
         label.numberOfLines = 2
+        label.sizeToFit()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -127,6 +128,27 @@ class BaseCell: UICollectionViewCell {
         containerView.addSubview(likeCountLabel)
         containerView.addSubview(readImageView)
         containerView.addSubview(readLabel)
+        
+        
+        _ = postTitleLabel.anchor(containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: containerView.frame.width, heightConstant: estimatedFrameForText(text: postTitleLabel.text!, textSize: 14).height)
+        
+        postTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        
+        _ = postTimeTextView.anchor(postTitleLabel.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: containerView.frame.width, heightConstant: 10)
+        
+        _ = descriptionLabel.anchor(postTitleLabel.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, topConstant: 15, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: containerView.frame.width, heightConstant: estimatedFrameForText(text: descriptionLabel.text!, textSize: 12).height)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 12)
+        
+        
+        _ = favoriteButton.anchor(nil, left: nil, bottom: containerView.bottomAnchor, right: shareButton.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 25, widthConstant: 15, heightConstant: 15)
+        
+        _ = likeButton.anchor(nil, left: containerView.leftAnchor, bottom: containerView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 15, heightConstant: 15)
+        
+        _ = likeCountLabel.anchor(nil, left: likeButton.rightAnchor, bottom: containerView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 5, bottomConstant: 0, rightConstant: 0, widthConstant: 15, heightConstant: 15)
+        
+        _ = readImageView.anchor(nil, left: likeCountLabel.rightAnchor, bottom: containerView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 5, bottomConstant: 0, rightConstant: 0, widthConstant: 15, heightConstant: 15)
+        
+        _ = readLabel.anchor(nil, left: readImageView.rightAnchor, bottom: containerView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 5, bottomConstant: 0, rightConstant: 0, widthConstant: 15, heightConstant: 15)
     }
     
     func estimatedFrameForText(text: String, textSize: CGFloat) -> CGRect{

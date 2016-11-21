@@ -27,6 +27,7 @@ class NewsController: UICollectionViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchNews()
         
         collectionView?.dataSource = self
         collectionView?.delegate = self
