@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Video: NSObject {
+class Video: NSObject, JSONDecodable {
     
     fileprivate var _id: String!
     fileprivate var _url: String!
@@ -32,6 +32,13 @@ class Video: NSObject {
             _url = ""
         }
         return _url
+    }
+    
+    var title: String?{
+        if _title == nil{
+            _title = ""
+        }
+        return _title
     }
     
     var __description: String?{
@@ -77,6 +84,18 @@ class Video: NSObject {
         _like_count = dictionary["like_count"] as? Int
         _like_status = dictionary["like_status"] as? Int
         
+    }
+    
+    required init(_ json: [String: Any]) {
+        super.init()
+        
+        _id = json["id"] as? String
+        _title = json["title"] as? String
+        _description = json["description"] as? String
+        _published_at = json["published_at"] as? String
+        _like_count = json["like_count"] as? Int
+        _like_status = json["like_status"] as? Int
+
     }
     
     

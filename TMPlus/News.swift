@@ -8,7 +8,7 @@
 
 import UIKit
 
-class News: NSObject{
+class News: NSObject, JSONDecodable{
     
     fileprivate var _title: String!
     fileprivate var _href: String!
@@ -173,6 +173,26 @@ class News: NSObject{
         _read_count = dictionary["read_count"] as? Int
         _arch_status = dictionary["arch_status"] as? Int
         
+    }
+    
+    required init(_ json: [String: Any]) {
+        super.init()
+        _title = json["title"] as? String
+        _href = json["href"] as? String
+        _image = json["image"] as? String
+        _content = json["content"] as? String
+        _timestamp = json["timestamp"] as? String
+        _news_id = json["news_id"] as? Int
+        _type = json["type"] as? String
+        _comments = json["comments"] as? Int
+        _flag = json["flag"] as? String
+        _ext_date = json["ext_date"] as? String
+        _like_status = json["like_status"] as? Int
+        _like_count = json["like_count"] as? Int
+        _read_count = json["read_count"] as? Int
+        _dislike_count = json["dislike_count"] as? Int
+        _read_count = json["read_count"] as? Int
+        _arch_status = json["arch_status"] as? Int
     }
     
     

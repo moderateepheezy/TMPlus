@@ -13,6 +13,13 @@ import TwitterKit
 
 let imageCache = NSCache<NSString, UIImage>()
 
+enum TABNAME: String {
+    case NEWS = "News"
+    case EVENTS = "Events"
+    case TRENDS = "Trends"
+    case VIDEOS = "Videos"
+}
+
 extension UIImageView{
     
     func loadImageWithCache(urlString: String){

@@ -13,20 +13,20 @@ UICollectionViewDelegateFlowLayout {
     
     let cellId = "cellId"
     
-    var events: [Event]?
-    
-    func fetchEvents(){
-        ApiService.sharedInstance.fetchEventsFeeds { (events: [Event]) in
-            
-            self.events = events
-            self.collectionView?.reloadData()
-        }
-    }
+//    var events: [Event]?
+//    
+//    func fetchEvents(){
+//        ApiService.sharedInstance.fetchEventsFeeds { (events: [Event]) in
+//            
+//            self.events = events
+//            self.collectionView?.reloadData()
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchEvents()
+        //fetchEvents()
         
         collectionView?.dataSource = self
         collectionView?.delegate = self
@@ -53,15 +53,15 @@ UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return events?.count ?? 0
+        return 5//events?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeedsCell
         
-        let post = events?[indexPath.item]
+        //let post = Events?[indexPath.item]
         
-        renderEventToView(cell: cell, post: post!)
+        //renderEventToView(cell: cell, post: post!)
         
         return cell
     }
@@ -70,9 +70,6 @@ UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.width, height: 150)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(10, 10, 10, 10)
-    }
     
     fileprivate func renderEventToView(cell: FeedsCell, post: Event){
         cell.postTitleLabel.text = post.name

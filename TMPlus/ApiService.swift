@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol JSONDecodable {
+    init?(_ json: [String: Any])
+}
+
 class ApiService: NSObject{
     
     
@@ -15,12 +19,16 @@ class ApiService: NSObject{
     
     let baseUrl = "http://voice.atp-sevas.com/demo/yql"
     
-    func fetchEventsFeeds(completion: @escaping ([Event]) -> ()){
-        
-        fetchFeedForUrlString(urlString: "\(baseUrl)/events", completion: completion)
+    func fetchNewsFeeds(completion: @escaping ([News]) -> ()){
+        fetchFeedForUrlString(urlString: "\(baseUrl)/users/\(UserDefaults.standard.fetchUserDetails().id)/news/preferences?value=bella", completion: completion)
     }
     
-    func fetchFeedForUrlString(urlString: String, completion: @escaping ([Event]) -> ()){
+    func fetchVideosFeeds(completion: @escaping ([Video]) -> ()){
+        fetchFeedForUrlString(urlString: "\(baseUrl)/videos", completion: completion)
+        
+    }
+    
+    func fetchFeedForUrlString<T: JSONDecodable>(urlString: String, completion: @escaping     ([T]) -> ()){
         
         let url = NSURL(string: urlString)!
         
@@ -29,22 +37,20 @@ class ApiService: NSObject{
                 print("Unable to fetch data\(error)")
                 return
             }
-                
+            
             if let wrappedData = data,
                 let json = try? JSONSerialization.jsonObject(with: wrappedData, options: .allowFragments) as? [String: Any]{
-                        
-                print("ThisisWrap\(json)")
+                
                 if let results = json?["data"] as? [[String: AnyObject]]{
-                    let events = results.map({return Event(dictionary: $0)})
-                            
+                    let posts = results.flatMap({return T($0)})
+                    
                     DispatchQueue.main.async {
-                        completion(events)
+                        completion(posts)
                     }
                 }
-                        
+                
             }
             
         }.resume()
     }
-
 }
