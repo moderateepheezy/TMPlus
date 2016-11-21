@@ -32,7 +32,6 @@ UICollectionViewDelegateFlowLayout {
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        //collectionView.ins
         collectionView?.backgroundColor = UIColor(white: 0.95, alpha: 0.95)
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(FeedsCell.self, forCellWithReuseIdentifier: cellId)

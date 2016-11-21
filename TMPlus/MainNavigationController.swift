@@ -57,7 +57,7 @@ class CustomTabController: UITabBarController{
         eventNavigationController.title = TABNAME.EVENTS.rawValue
         eventNavigationController.tabBarItem.image = UIImage(named: "event")
         
-        let trendController = UIViewController()
+        let trendController = TrendsController(collectionViewLayout: layout)
         let trendNavigationController = UINavigationController(rootViewController: trendController)
         trendNavigationController.title = TABNAME.TRENDS.rawValue
         trendNavigationController.tabBarItem.image = UIImage(named: "trend")

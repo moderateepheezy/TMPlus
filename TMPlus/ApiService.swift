@@ -33,8 +33,7 @@ class ApiService: NSObject{
         guard let id = UserDefaults.standard.fetchUserDetails().id else{
             return
         }
-        print("\(id)")
-        fetchFeedForUrlString(urlString: "\(baseUrl)/events", completion: completion)
+        fetchFeedForUrlString(urlString: "\(baseUrl)/events/\(id)", completion: completion)
         
     }
     
@@ -43,7 +42,10 @@ class ApiService: NSObject{
     }
 
     func fetchVideosFeeds(completion: @escaping ([Video]) -> ()){
-        fetchFeedForUrlString(urlString: "\(baseUrl)/videos", completion: completion)
+        guard let id = UserDefaults.standard.fetchUserDetails().id else{
+            return
+        }
+        fetchFeedForUrlString(urlString: "\(baseUrl)/videos/\(id)", completion: completion)
         
     }
     

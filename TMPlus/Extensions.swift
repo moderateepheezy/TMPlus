@@ -80,6 +80,8 @@ extension UserDefaults{
     }
     
     func removeUserDetails(){
+        
+        URLCache.shared.removeAllCachedResponses()
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
         

@@ -13,7 +13,7 @@ class FeedsCell: BaseCell {
      override func setupViews(){
         super.setupViews()
         
-        _ = directionImageView.anchor(postImageView.topAnchor, left: nil, bottom: nil, right: postImageView.rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 10, heightConstant: 10)
+        _ = directionImageView.anchor(postImageView.topAnchor, left: nil, bottom: nil, right: postImageView.rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: -2, widthConstant: 10, heightConstant: 10)
         
         _ = containerView.anchor(topAnchor, left: postImageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 8, leftConstant: 8, bottomConstant: 8, rightConstant: 8, widthConstant: frame.width, heightConstant: frame.height)
         
