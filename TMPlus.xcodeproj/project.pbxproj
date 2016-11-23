@@ -729,6 +729,7 @@
 				CODE_SIGN_ENTITLEMENTS = TMPlus/TMPlus.entitlements;
 				DEVELOPMENT_TEAM = GDMX8HJT5A;
 				INFOPLIST_FILE = TMPlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpumind.TMPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -744,6 +745,7 @@
 				CODE_SIGN_ENTITLEMENTS = TMPlus/TMPlus.entitlements;
 				DEVELOPMENT_TEAM = GDMX8HJT5A;
 				INFOPLIST_FILE = TMPlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpumind.TMPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";

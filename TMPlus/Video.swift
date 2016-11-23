@@ -90,6 +90,7 @@ class Video: NSObject, JSONDecodable {
         super.init()
         
         _id = json["id"] as? String
+        _url = json["url"] as? String
         _title = json["title"] as? String
         _description = json["description"] as? String
         _published_at = json["published_at"] as? String

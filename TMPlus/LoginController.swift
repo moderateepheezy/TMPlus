@@ -234,8 +234,10 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
 //        mainNavigationController.viewControllers = [HomeController()]
         
         UserDefaults.standard.setIsLoggedIn(value: true)
-        
-        dismiss(animated: true, completion: nil)
+        if let keyWindow = UIApplication.shared.keyWindow{
+            dismiss(animated: true, completion: nil)
+            keyWindow.rootViewController = CustomTabController()
+        }
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {

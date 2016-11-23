@@ -23,6 +23,14 @@ class NewsController: UICollectionViewController,
         }
     }
     
+    func showLoginController(){
+        let loginController = LoginController()
+        present(loginController, animated: true, completion: {
+            //perphaps whe do something here later
+        })
+    }
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -38,7 +38,7 @@ class ApiService: NSObject{
     }
     
     func fetchTrendsFeeds(completion: @escaping ([Trend]) -> ()){
-        fetchFeedForUrlString(urlString: "\(baseUrl)/trends", completion: completion)
+        fetchFeedForUrlString(urlString: "\(baseUrl)/twitter/trends", completion: completion)
     }
 
     func fetchVideosFeeds(completion: @escaping ([Video]) -> ()){
@@ -61,7 +61,7 @@ class ApiService: NSObject{
             
             if let wrappedData = data,
                 let json = try? JSONSerialization.jsonObject(with: wrappedData, options: .allowFragments) as? [String: Any]{
-                print("JsonDataFormat\(json)")
+                //print("urlFormat\(url)\nJsonDataFormat\(json)")
                 if let results = json?["data"] as? [[String: AnyObject]]{
                     let posts = results.flatMap({return T($0)})
                     

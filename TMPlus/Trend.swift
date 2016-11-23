@@ -10,24 +10,31 @@ import UIKit
 
 class Trend: NSObject, JSONDecodable {
     
-    fileprivate var _name: String?
-    fileprivate var _query: String?
-    fileprivate var _tweet_volume: Int?
-    private var _tweets_sata: [TweetsSatum]?
+    var name: String
+    var query: String
+    var tweetVolume: Int
+    var tweetsSata = [TweetsSatum]()
+
     
     required init(_ json: [String: Any]) {
-        super.init()
         
-        _name = json["name"] as? String
-        _query = json["query"] as? String
-        _tweet_volume = json["tweet_volume"] as? Int
-        //_tweets_sata = json["tweets_sata"] as? Int
-        
+        name = json["name"] as? String ?? ""
+        query = json["query"] as? String ?? ""
+        tweetVolume = json["tweet_volume"] as? Int ?? 0
+        if let tweets = json["tweets_sata"] as? [[String:String]] {
+            tweetsSata = tweets.map { TweetsSatum(json:$0) }
+        }
     }
+    
 }
 
 
 class TweetsSatum: NSObject {
-    fileprivate var tweet: String?
-    private var user: String?
+    var tweet: String
+    var user: String
+    
+    required init(json: [String: String]) {
+        tweet = json["tweet"] ?? ""
+        user = json["user"] ?? ""
+    }
 }
