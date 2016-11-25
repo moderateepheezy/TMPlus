@@ -38,13 +38,6 @@ class NewsController: UICollectionViewController,
         
         fetchNews()
         
-        let cache = Cache<JSON>(name: "github")
-        let URL = NSURL(string: "https://api.github.com/users/haneke")!
-        
-        cache.fetch(URL: URL as URL).onSuccess { JSON in
-            print("ffkg\(JSON.dictionary?["bio"])")
-        }
-        
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -95,7 +88,7 @@ class NewsController: UICollectionViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 150)
+        return CGSize(width: view.frame.width, height: 160)
     }
     
     
@@ -103,10 +96,22 @@ class NewsController: UICollectionViewController,
         cell.postTitleLabel.text = post.title
         cell.postTimeTextView.text = post.timestamp
         cell.descriptionLabel.text = post.content
+        cell.typeOfNewsLabel.text = post.type
         cell.directionImageView.image = UIImage(named: "ok_left")
         cell.postImageView.loadImageWithCache(urlString: post.image!)
         cell.likeCountLabel.text = String(describing: post.like_count)
         cell.readLabel.text = String(describing: post.read_count)
+        
+        let flag = post.flag
+        if flag == "bella"{
+            cell.typeImageView.image = UIImage(named: "bella")
+        }else if flag == "linda"{
+            cell.typeImageView.image = UIImage(named: "lib")
+        }else if flag == "punch"{
+            cell.typeImageView.image = UIImage(named: "punch")
+        }else if flag == "pulse"{
+            cell.typeImageView.image = UIImage(named: "pulse_logo")
+        }
     }
     
     fileprivate func renderViewGrafityRight(cell: ReverseFeedsCell, post: News){
@@ -116,6 +121,7 @@ class NewsController: UICollectionViewController,
         cell.postTitleLabel.text = post.title
         cell.postTimeTextView.text = post.timestamp
         cell.descriptionLabel.text = post.content
+        cell.typeOfNewsLabel.text = post.type
         cell.directionImageView.image = UIImage(named: "ok_right")
         cell.likeCountLabel.text = String(describing: post.like_count)
         cell.readLabel.text = String(describing: post.read_count)
@@ -125,6 +131,17 @@ class NewsController: UICollectionViewController,
         let fetcher = NetworkFetcher<UIImage>(URL: URL as URL)
         cache.fetch(fetcher: fetcher).onSuccess { image in
             cell.postImageView.image = image
+        }
+        
+        let flag = post.flag
+        if flag == "bella"{
+            cell.typeImageView.image = UIImage(named: "bella")
+        }else if flag == "linda"{
+            cell.typeImageView.image = UIImage(named: "lib")
+        }else if flag == "punch"{
+            cell.typeImageView.image = UIImage(named: "punch")
+        }else if flag == "pulse"{
+            cell.typeImageView.image = UIImage(named: "pulse_logo")
         }
     }
 

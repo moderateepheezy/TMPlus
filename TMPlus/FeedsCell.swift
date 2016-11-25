@@ -10,6 +10,11 @@ import UIKit
 
 class FeedsCell: BaseCell {
     
+    var directionImageContriant: NSLayoutConstraint?
+    var containerViewContriant: NSLayoutConstraint?
+    var psotImageViewContrant: NSLayoutConstraint?
+    var shareButtonConstraint: NSLayoutConstraint?
+    
      override func setupViews(){
         super.setupViews()
         

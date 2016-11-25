@@ -26,7 +26,7 @@ class ApiService: NSObject{
             return
         }
         
-        fetchFeedForUrlString(urlName: "News", urlString: "\(baseUrl)/users/\(id)/news/preferences?value=bella", completion: completion)
+        fetchFeedForUrlString(urlName: "News", urlString: "\(baseUrl)/users/\(id)/news/preferences?value=bella+linda+punch+pulse", completion: completion)
     }
     
     func fetchEventsFeeds(completion: @escaping ([Event]) -> ()){

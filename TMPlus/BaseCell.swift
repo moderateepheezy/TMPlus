@@ -15,6 +15,23 @@ class BaseCell: UICollectionViewCell {
         setupViews()
     }
     
+    let typeOfNewsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Linda"
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let typeImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.layer.masksToBounds = true
+        iv.image = UIImage(named: "lib")
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }()
+    
     let postImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -118,6 +135,8 @@ class BaseCell: UICollectionViewCell {
         
         addSubview(postImageView)
         addSubview(containerView)
+        containerView.addSubview(typeImageView)
+        containerView.addSubview(typeOfNewsLabel)
         containerView.addSubview(postTitleLabel)
         containerView.addSubview(postTimeTextView)
         postImageView.addSubview(directionImageView)
@@ -130,7 +149,12 @@ class BaseCell: UICollectionViewCell {
         containerView.addSubview(readLabel)
         
         
-        _ = postTitleLabel.anchor(containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: containerView.frame.width, heightConstant: estimatedFrameForText(text: postTitleLabel.text!, textSize: 14).height)
+        _ = typeImageView.anchor(containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
+        
+        _ = typeOfNewsLabel.anchor(containerView.topAnchor, left: typeImageView.rightAnchor, bottom: nil, right: nil, topConstant: 3, leftConstant: 5, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 10)
+        
+        
+        _ = postTitleLabel.anchor(typeImageView.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: containerView.frame.width, heightConstant: estimatedFrameForText(text: postTitleLabel.text!, textSize: 14).height)
         
         postTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         
