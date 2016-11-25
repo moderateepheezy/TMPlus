@@ -100,7 +100,7 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
     
     func nextPage(){
         //when it hits the last page
-        if pageControl.currentPage == 5{
+        if pageControl.currentPage == 4{
             nextButton.isHidden = true
             return
         }
@@ -113,13 +113,13 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func prevPage(){
-        //when it hits the last page
-        if pageControl.currentPage ==  1{
+        //when it hits the first page
+        if pageControl.currentPage ==  0{
             prevButton.isHidden = true
             return
         }
         
-        let indexPath = IndexPath(item: pageControl.currentPage + 1,section: 0)
+        let indexPath = IndexPath(item: pageControl.currentPage - 1,section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         pageControl.currentPage -= 1
         nextButton.isHidden = false

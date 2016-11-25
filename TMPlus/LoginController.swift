@@ -227,11 +227,6 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func finishLoggingIn(){
-//        let rootViewController = UIApplication.shared.keyWindow?.rootViewController
-//        guard let mainNavigationController = rootViewController as? CustomTabController else {
-//            return
-//        }
-//        mainNavigationController.viewControllers = [HomeController()]
         
         UserDefaults.standard.setIsLoggedIn(value: true)
         if let keyWindow = UIApplication.shared.keyWindow{
