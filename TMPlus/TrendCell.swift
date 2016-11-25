@@ -177,6 +177,25 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let pageNumber =  Int(targetContentOffset.pointee.x / collectionView.frame.width)
+        pageControl.currentPage = pageNumber
+        
+        if pageControl.currentPage == 4{
+            nextButton.isHidden = true
+            prevButton.isHidden = false
+        }else if pageControl.currentPage == 0{
+            nextButton.isHidden = false
+            prevButton.isHidden = true
+        }else{
+            nextButton.isHidden = false
+            prevButton.isHidden = false
+        }
+        
+    }
+    
 }
 
 class TrendFieldCell: UICollectionViewCell{
