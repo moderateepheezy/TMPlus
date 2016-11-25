@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 
 class VideosController: UICollectionViewController,
@@ -94,11 +95,17 @@ UICollectionViewDelegateFlowLayout {
     }
     
     fileprivate func renderViewGrafityRight(cell: ReverseFeedsCell, post: Video){
+        let cache = Shared.imageCache
         cell.postTitleLabel.text = post.title
         cell.postTimeTextView.text = post.published_at
         cell.descriptionLabel.text = post.__description
-        cell.postImageView.loadImageWithCache(urlString: post.url!)
         cell.directionImageView.image = UIImage(named: "ok_right")
+        let URL = NSURL(string: post.url!)!
+
+        let fetcher = NetworkFetcher<UIImage>(URL: URL as URL)
+        cache.fetch(fetcher: fetcher).onSuccess { image in
+            cell.postImageView.image = image
+        }
     }
     
 }

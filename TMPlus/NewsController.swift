@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class NewsController: UICollectionViewController,
             UICollectionViewDelegateFlowLayout {
@@ -36,6 +37,13 @@ class NewsController: UICollectionViewController,
         super.viewDidLoad()
         
         fetchNews()
+        
+        let cache = Cache<JSON>(name: "github")
+        let URL = NSURL(string: "https://api.github.com/users/haneke")!
+        
+        cache.fetch(URL: URL as URL).onSuccess { JSON in
+            print("ffkg\(JSON.dictionary?["bio"])")
+        }
         
         collectionView?.dataSource = self
         collectionView?.delegate = self
@@ -102,13 +110,22 @@ class NewsController: UICollectionViewController,
     }
     
     fileprivate func renderViewGrafityRight(cell: ReverseFeedsCell, post: News){
+        
+        let cache = Shared.imageCache
+        
         cell.postTitleLabel.text = post.title
         cell.postTimeTextView.text = post.timestamp
         cell.descriptionLabel.text = post.content
         cell.directionImageView.image = UIImage(named: "ok_right")
-        cell.postImageView.loadImageWithCache(urlString: post.image!)
         cell.likeCountLabel.text = String(describing: post.like_count)
         cell.readLabel.text = String(describing: post.read_count)
+        
+        let URL = NSURL(string: post.image!)!
+        
+        let fetcher = NetworkFetcher<UIImage>(URL: URL as URL)
+        cache.fetch(fetcher: fetcher).onSuccess { image in
+            cell.postImageView.image = image
+        }
     }
 
 }

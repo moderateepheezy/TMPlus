@@ -12,6 +12,7 @@ target 'TMPlus' do
   pod 'Google/SignIn'
   pod 'Fabric'
   pod 'TwitterKit'
+  pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift', :branch => 'feature/swift-3'
   target 'TMPlusTests' do
     inherit! :search_paths
     # Pods for testing

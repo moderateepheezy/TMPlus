@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class EventsController: UICollectionViewController,
 UICollectionViewDelegateFlowLayout {
@@ -96,11 +97,18 @@ UICollectionViewDelegateFlowLayout {
     
     fileprivate func renderViewGrafityRight(cell: ReverseFeedsCell, post: Event){
         
+        let cache = Shared.imageCache
         cell.postTitleLabel.text = post.name
         cell.postTimeTextView.text = post.start
         cell.descriptionLabel.text = post.__description
         cell.directionImageView.image = UIImage(named: "ok_right")
-        cell.postImageView.loadImageWithCache(urlString: post.img_name!)
+        
+        let URL = NSURL(string: post.img_name!)!
+        
+        let fetcher = NetworkFetcher<UIImage>(URL: URL as URL)
+        cache.fetch(fetcher: fetcher).onSuccess { image in
+            cell.postImageView.image = image
+        }
     }
 
     
